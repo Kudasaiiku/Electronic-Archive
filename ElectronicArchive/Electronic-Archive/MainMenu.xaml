@@ -1,0 +1,281 @@
+﻿<Window x:Class="Electronic_Archive.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Electronic_Archive"
+        mc:Ignorable="d"
+        Title="Главное меню" Height="1050" Width="2000" ResizeMode="CanResize" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <SolidColorBrush x:Key="PressedBackgroundBrush" Color="#7A9E74" />
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="PART_Border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="PART_Border" Property="Background" Value="{StaticResource PressedBackgroundBrush}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="TrashButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <!-- Изображение для кнопки Trash -->
+                            <Image x:Name="TrashImage" Source="/icons8-musor-100_2.png" />
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <!-- Триггер для состояния IsEnabled -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="TrashImage" Property="Source" Value="/icons8-musor-100_2.png" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+    <Grid Background="#FFDAD3C0">
+        <TextBlock HorizontalAlignment="Left" Margin="676,33,0,0" TextWrapping="Wrap" Text="Elecronic Archive Version 0.001 " FontSize="32" FontFamily="Lucida Calligraphy" Foreground="#FF9A7066" Height="44" VerticalAlignment="Top"/>
+        <Image Margin="607,26,0,0" Height="76" Width="70" Source="/icons8-легкий-вес-64.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Grid HorizontalAlignment="Left" Height="350"  Margin="104,204,0,0" VerticalAlignment="Top" Width="1702" Background="White">
+            <DataGrid x:Name="CardsGrid" Loaded="CardsGrid_Loaded" IsReadOnly="True" ItemsSource="{Binding YourCardCollection}" AutoGenerateColumns="False" MouseDoubleClick="CardsGrid_MouseDoubleClick_1" SelectionChanged="CardsGrid_SelectionChanged">
+                <DataGrid.Resources>
+                    <ContextMenu x:Key="CellContextMenu">
+                        <MenuItem Header="Копировать" Click="CellContextMenu_CopyValue"/>
+                    </ContextMenu>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ДН" Binding="{Binding DN}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Название}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Подразделение" Binding="{Binding Подразделение}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Вид документа" Binding="{Binding Вид_документа}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Знак заказчика" Binding="{Binding Знак_заказчика}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Номер решения" Binding="{Binding Номер_решения}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="A0" Binding="{Binding A0}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="A1" Binding="{Binding A1}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="A2" Binding="{Binding A2}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="A3" Binding="{Binding A3}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="A4" Binding="{Binding A4}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Другое" Binding="{Binding Другое}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Количество" Binding="{Binding Количество}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Подлинник" Binding="{Binding Подлинник}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Дубликат" Binding="{Binding Дубликат}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="ИН подлинник" Binding="{Binding ИН_подлинник}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="ИН дубликат" Binding="{Binding ИН_дубликат}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата подлинник" Binding="{Binding Дата_подлинник}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата дубликат" Binding="{Binding Дата_дубликат}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Литера" Binding="{Binding Литера}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="350" Margin="104,568,0,0" VerticalAlignment="Top" Width="1702" Background="White">
+            <DataGrid x:Name="FilesGrid" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="FilesGrid_MouseDoubleClick">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Имя файла" Binding="{Binding FileName}" Width="*"/>
+                    <DataGridTextColumn Header="Время" Binding="{Binding CreationTime}" Width="*"/>
+                    <DataGridTextColumn Header="Путь" Binding="{Binding FilePath}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <Button x:Name="Annul" Content="Аннулировать карточку" HorizontalAlignment="Left" Height="64" Margin="705,930,0,0" VerticalAlignment="Top" Width="500" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" BorderThickness="2,2,2,2" Foreground="#FF684A43" Background="#FFD9D9D9" Click="Annul_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="Exploitation" Content="Добавить применяемость" HorizontalAlignment="Left" Height="64" Margin="1305,117,0,0" VerticalAlignment="Top" Width="500" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" BorderThickness="2,2,2,2" Foreground="#FF684A43" Background="#FFD9D9D9" Click="Exploitation_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="Changes" Content="Добавить изменения" HorizontalAlignment="Left" Height="64" Margin="1305,30,0,0" VerticalAlignment="Top" Width="500" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" BorderThickness="2,2,2,2" Foreground="#FF684A43" Background="#FFD9D9D9" Click="Changes_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="Copies" Content="Учет копий" HorizontalAlignment="Left" Height="64" Margin="977,117,0,0" VerticalAlignment="Top" Width="304" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" BorderThickness="2,2,2,2" Foreground="#FF684A43" Background="#FFD9D9D9" Click="Copies_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button Style="{StaticResource CustomButtonStyle}" Content="Создать" HorizontalAlignment="Left" Height="64" Margin="104,117,0,0" VerticalAlignment="Top" Width="202" Click="Create_Click" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" BorderThickness="2,2,2,2" Foreground="#FF684A43" Background="#FFD9D9D9">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="Edit" Content="Редактировать" HorizontalAlignment="Left" Height="64" Margin="104,30,0,0" VerticalAlignment="Top" Width="304" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" BorderThickness="2,2,2,2" Foreground="#FF684A43" Background="#FFD9D9D9" Click="Edit_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </Button.BorderBrush>
+        </Button>
+        <TextBox x:Name="Search" Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="64" Margin="328,117,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="627" Background="#FFD9D9D9" FontFamily="Century Gothic" FontSize="55" BorderThickness="2,2,2,2" TextChanged="Search_TextChanged" TextAlignment="Justify">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </TextBox.BorderBrush>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="#FF684A44" Opacity="1"/>
+            </TextBox.Foreground>
+        </TextBox>
+        <Label x:Name="SearchLabel" Content="Поиск..." IsHitTestVisible="False" HorizontalAlignment="Left" Height="48" Margin="346,125,0,0" VerticalAlignment="Top" Width="158" FontSize="32" FontFamily="Century Gothic">
+            <Label.Foreground>
+                <SolidColorBrush Color="#FF684A44" Opacity="0.5"/>
+            </Label.Foreground>
+        </Label>
+        <Button Content="Режим администратора" HorizontalAlignment="Left" Height="64" Margin="104,930,0,0" VerticalAlignment="Top" Width="500" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" BorderThickness="2,2,2,2" Foreground="#FF684A43" Background="#FFD9D9D9" Click="Admin_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </Button.BorderBrush>
+        </Button>
+        <Button x:Name="Trash" Margin="1741,930,0,0" BorderThickness="2,2,2,2" HorizontalAlignment="Left" Width="64" Height="64" VerticalAlignment="Top" Click="Trash_Click" >
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF715B57" Opacity="0.5"/>
+            </Button.BorderBrush>
+            <Button.Background>
+                <ImageBrush ImageSource="/icons8-musor-100_2.png" Stretch="UniformToFill" TileMode="Tile"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

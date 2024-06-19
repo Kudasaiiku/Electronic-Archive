@@ -1,0 +1,46 @@
+USE testtest
+GO
+
+IF EXISTS(
+  SELECT *
+    FROM sys.triggers
+   WHERE name = N'LogTrigger'
+     AND parent_class_desc = N'DATABASE'
+)
+  DROP TRIGGER LogTrigger ON DATABASE
+GO
+
+CREATE TRIGGER LogTrigger
+ON dbo.Cards
+AFTER UPDATE, INSERT
+AS 
+BEGIN
+  DECLARE @old_values NVARCHAR(MAX);
+  DECLARE @new_values NVARCHAR(MAX);
+  DECLARE @column_name NVARCHAR(255);
+  DECLARE @sql NVARCHAR(MAX);
+  
+  -- Получение списка измененных столбцов
+  SELECT @old_values = '', @new_values = '';
+
+  -- Создание динамического SQL-запроса для формирования строки с измененными значениями
+  SELECT @sql = N'SELECT ';
+  
+  SELECT @sql = @sql + QUOTENAME(c.name) + ', ' +
+                 'CONVERT(NVARCHAR(MAX), DELETED.' + QUOTENAME(c.name) + '), ' +
+                 'CONVERT(NVARCHAR(MAX), INSERTED.' + QUOTENAME(c.name) + '), '
+  FROM sys.columns c
+  WHERE c.object_id = OBJECT_ID('Cards')
+  AND c.name <> 'ДН';
+  
+  SET @sql = LEFT(@sql, LEN(@sql) - 2) + ' ' +
+             'FROM DELETED INNER JOIN INSERTED ON DELETED.ДН = INSERTED.ДН';
+             
+  EXEC sp_executesql @sql, N'@old_values NVARCHAR(MAX) OUTPUT, @new_values NVARCHAR(MAX) OUTPUT', @old_values OUTPUT, @new_values OUTPUT;
+  
+  -- Запись изменений в таблицу Logs
+  INSERT INTO Logs (ДН, Старые_значения, Новые_значения, Изменено_пользователем, Дата_изменения)
+  SELECT ДН, @old_values, @new_values, 'Пользователь', GETDATE()
+  FROM INSERTED;
+END;
+GO

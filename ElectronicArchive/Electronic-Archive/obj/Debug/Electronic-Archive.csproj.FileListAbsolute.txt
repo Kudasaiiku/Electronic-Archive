@@ -1,0 +1,98 @@
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.AssemblyReference.cache
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.SuggestedBindingRedirects.cache
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\MainWindow.g.cs
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\App.g.cs
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive_MarkupCompile.cache
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive_MarkupCompile.lref
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\bin\Debug\Electronic-Archive.exe.config
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\bin\Debug\Electronic-Archive.exe
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\bin\Debug\Electronic-Archive.pdb
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\MainWindow.baml
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive.g.resources
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic_Archive.Properties.Resources.resources
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.GenerateResource.cache
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.CoreCompileInputs.cache
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive.exe
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\Electronic-Archive.pdb
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\MainMenu.g.cs
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\MainMenu.baml
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\NewCard.g.cs
+C:\Users\Olga\source\repos\Electronic-Archive\Electronic-Archive\obj\Debug\NewCard.baml
+D:\арх\Electronic-Archive\bin\Debug\Electronic-Archive.exe.config
+D:\арх\Electronic-Archive\bin\Debug\Electronic-Archive.exe
+D:\арх\Electronic-Archive\bin\Debug\Electronic-Archive.pdb
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.AssemblyReference.cache
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.SuggestedBindingRedirects.cache
+D:\арх\Electronic-Archive\obj\Debug\MainMenu.g.cs
+D:\арх\Electronic-Archive\obj\Debug\MainWindow.g.cs
+D:\арх\Electronic-Archive\obj\Debug\NewCard.g.cs
+D:\арх\Electronic-Archive\obj\Debug\App.g.cs
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive_MarkupCompile.cache
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive_MarkupCompile.lref
+D:\арх\Electronic-Archive\obj\Debug\MainMenu.baml
+D:\арх\Electronic-Archive\obj\Debug\MainWindow.baml
+D:\арх\Electronic-Archive\obj\Debug\NewCard.baml
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive.g.resources
+D:\арх\Electronic-Archive\obj\Debug\Electronic_Archive.Properties.Resources.resources
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.GenerateResource.cache
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.CoreCompileInputs.cache
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive.exe
+D:\арх\Electronic-Archive\obj\Debug\Electronic-Archive.pdb
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\Electronic-Archive.exe.config
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\Electronic-Archive.exe
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\Electronic-Archive.pdb
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.AssemblyReference.cache
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\MainMenu.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\MainWindow.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\NewCard.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\App.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive_MarkupCompile.cache
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive_MarkupCompile.lref
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\MainMenu.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\MainWindow.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\NewCard.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive.g.resources
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic_Archive.Properties.Resources.resources
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.GenerateResource.cache
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.CoreCompileInputs.cache
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive.exe
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive.pdb
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\EntityFramework.dll
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\EntityFramework.xml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive_Content.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Electronic-Archive.csproj.CopyComplete
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\EditingStep1.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\EditingStep2.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\EditingStep1.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\EditingStep2.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\CopyAccountingStep1.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\CopyAccountingStep2.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\CopyAccountingStep1.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\CopyAccountingStep2.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Annul.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\ChangesStep1.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\ChangesStep2.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\ExploitationStep1.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\ExploitationStep2.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Annul.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\ChangesStep1.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\ChangesStep2.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\ExploitationStep1.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\ExploitationStep2.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\EPPlus.dll
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\EPPlus.Interfaces.dll
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\EPPlus.System.Drawing.dll
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\Microsoft.IO.RecyclableMemoryStream.dll
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\EPPlus.xml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\Microsoft.IO.RecyclableMemoryStream.xml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Warning.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Warning.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\AdminWindow.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\AdminWindow.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Warning2.g.cs
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\obj\Debug\Warning2.baml
+C:\Users\deadi\OneDrive\Рабочий стол\ElectronicArchive\Electronic-Archive\bin\Debug\MaskedTextBox.dll

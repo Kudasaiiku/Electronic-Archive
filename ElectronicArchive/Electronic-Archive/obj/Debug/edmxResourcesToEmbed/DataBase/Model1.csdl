@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ArchiveModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Annul">
+    <Key>
+      <PropertyRef Name="ID_annul" />
+    </Key>
+    <Property Name="ID_annul" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ДН" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Замены" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Комментарий" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Дата" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Карточка" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="Копии" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="Применяемость" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="Изменения" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Cards">
+    <Key>
+      <PropertyRef Name="ДН" />
+    </Key>
+    <Property Name="ДН" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Название" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Подразделение" Type="Int64" />
+    <Property Name="Вид_документа" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Знак_заказчика" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Номер_решения" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="A0" Type="Int32" />
+    <Property Name="A1" Type="Int32" />
+    <Property Name="A2" Type="Int32" />
+    <Property Name="A3" Type="Int32" />
+    <Property Name="A4" Type="Int32" />
+    <Property Name="Другое" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Количество" Type="Int64" />
+    <Property Name="Подлинник" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Дубликат" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ИН_подлинник" Type="Int64" />
+    <Property Name="ИН_дубликат" Type="Int64" />
+    <Property Name="Дата_подлинник" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Дата_дубликат" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Литера" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Changes" Relationship="Self.FK__Changes__ДН__412EB0B6" FromRole="Cards" ToRole="Changes" />
+    <NavigationProperty Name="Copies" Relationship="Self.FK__Copies__ДН__3B75D760" FromRole="Cards" ToRole="Copies" />
+    <NavigationProperty Name="Exploitation" Relationship="Self.FK__Exploitation__ДН__3E52440B" FromRole="Cards" ToRole="Exploitation" />
+  </EntityType>
+  <EntityType Name="CardsLog">
+    <Key>
+      <PropertyRef Name="ID_log" />
+    </Key>
+    <Property Name="ID_log" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ДН" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Старые_значения" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="Новые_значения" Type="String" MaxLength="1500" FixedLength="false" Unicode="false" />
+    <Property Name="Пользователь" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Дата_изменения" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Changes">
+    <Key>
+      <PropertyRef Name="ID_changes" />
+    </Key>
+    <Property Name="ID_changes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ДН" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Номер_извещения" Type="Double" />
+    <Property Name="Дата" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Изменения" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Литера" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cards" Relationship="Self.FK__Changes__ДН__412EB0B6" FromRole="Changes" ToRole="Cards" />
+  </EntityType>
+  <EntityType Name="Copies">
+    <Key>
+      <PropertyRef Name="ID_copies" />
+    </Key>
+    <Property Name="ID_copies" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ДН" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Дата" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Наряд" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Абонент" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Поступило" Type="Int64" />
+    <Property Name="Списано" Type="Int64" />
+    <NavigationProperty Name="Cards" Relationship="Self.FK__Copies__ДН__3B75D760" FromRole="Copies" ToRole="Cards" />
+  </EntityType>
+  <EntityType Name="Exploitation">
+    <Key>
+      <PropertyRef Name="ID_expl" />
+    </Key>
+    <Property Name="ID_expl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ДН" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Применяемость" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Первичная" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Cards" Relationship="Self.FK__Exploitation__ДН__3E52440B" FromRole="Exploitation" ToRole="Cards" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID_users" />
+    </Key>
+    <Property Name="ID_users" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Логин" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Пароль" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Роль" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Changes__ДН__412EB0B6">
+    <End Role="Cards" Type="Self.Cards" Multiplicity="0..1" />
+    <End Role="Changes" Type="Self.Changes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cards">
+        <PropertyRef Name="ДН" />
+      </Principal>
+      <Dependent Role="Changes">
+        <PropertyRef Name="ДН" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Copies__ДН__3B75D760">
+    <End Role="Cards" Type="Self.Cards" Multiplicity="0..1" />
+    <End Role="Copies" Type="Self.Copies" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cards">
+        <PropertyRef Name="ДН" />
+      </Principal>
+      <Dependent Role="Copies">
+        <PropertyRef Name="ДН" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Exploitation__ДН__3E52440B">
+    <End Role="Cards" Type="Self.Cards" Multiplicity="0..1" />
+    <End Role="Exploitation" Type="Self.Exploitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cards">
+        <PropertyRef Name="ДН" />
+      </Principal>
+      <Dependent Role="Exploitation">
+        <PropertyRef Name="ДН" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ArchiveEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Annul" EntityType="Self.Annul" />
+    <EntitySet Name="Cards" EntityType="Self.Cards" />
+    <EntitySet Name="CardsLog" EntityType="Self.CardsLog" />
+    <EntitySet Name="Changes" EntityType="Self.Changes" />
+    <EntitySet Name="Copies" EntityType="Self.Copies" />
+    <EntitySet Name="Exploitation" EntityType="Self.Exploitation" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK__Changes__ДН__412EB0B6" Association="Self.FK__Changes__ДН__412EB0B6">
+      <End Role="Cards" EntitySet="Cards" />
+      <End Role="Changes" EntitySet="Changes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Copies__ДН__3B75D760" Association="Self.FK__Copies__ДН__3B75D760">
+      <End Role="Cards" EntitySet="Cards" />
+      <End Role="Copies" EntitySet="Copies" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Exploitation__ДН__3E52440B" Association="Self.FK__Exploitation__ДН__3E52440B">
+      <End Role="Cards" EntitySet="Cards" />
+      <End Role="Exploitation" EntitySet="Exploitation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

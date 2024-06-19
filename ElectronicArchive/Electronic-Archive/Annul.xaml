@@ -1,0 +1,162 @@
+﻿<Window x:Class="Electronic_Archive.Annul"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+xmlns:local="clr-namespace:Electronic_Archive"
+mc:Ignorable="d"
+Title="Аннулирование" Height="864" Width="1702" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFDAD2C0" Height="848" VerticalAlignment="Bottom">
+        <Grid HorizontalAlignment="Left" Height="382" Margin="115,141,0,0" VerticalAlignment="Top" Width="1483" Background="White">
+            <DataGrid x:Name="AnnulGrid" Loaded="AnnulGrid_Loaded" IsReadOnly="True" ItemsSource="{Binding YourCardCollection}" AutoGenerateColumns="False">
+                <DataGrid.Resources>
+                    <ContextMenu x:Key="CellContextMenu">
+                        <MenuItem Header="Копировать" Click="CellContextMenu_CopyValue"/>
+                    </ContextMenu>
+                </DataGrid.Resources>
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Изменения}" Value="Да">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#7A9E74" Opacity="0.4" />
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Изменения}" Value="Нет">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#A65C57" Opacity="0.4" />
+                                    </Setter.Value>
+                                </Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ДН" Binding="{Binding DN}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Замены" Binding="{Binding Замены}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Комментарий" Binding="{Binding Комментарий}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Дата" Binding="{Binding Дата}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Карточка" Binding="{Binding Карточка}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Копии" Binding="{Binding Копии}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Применяемость" Binding="{Binding Применяемость}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Header="Измнения" Binding="{Binding Изменения}" Width="*" IsReadOnly="True">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="DataGridCell">
+                                <Setter Property="ContextMenu" Value="{StaticResource CellContextMenu}"/>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+        <TextBox x:Name="DNV" HorizontalAlignment="Left" Height="50" Margin="117,608,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="538" Background="#FFD9D9D9" FontFamily="Century Gothic" FontSize="36" BorderThickness="2,2,2,2">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </TextBox.BorderBrush>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="#FF684A43" Opacity="1"/>
+            </TextBox.Foreground>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="117,0,0,241" TextWrapping="Wrap" Width="368" FontFamily="Dubai Medium" FontSize="36" Foreground="#FF7E544C" Height="55" VerticalAlignment="Bottom"><Run Language="ru-ru" Text="Децимальный номер"/><LineBreak/><Run/><LineBreak/><Run Text="9КОЛ-ВО_"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="1137,0,0,239" TextWrapping="Wrap" Width="461" FontFamily="Dubai Medium" FontSize="36" Foreground="#FF7E544C" Height="55" VerticalAlignment="Bottom" RenderTransformOrigin="0.538,0.433"><Run Text="Были внесены "/><Run Language="ru-ru" Text="замены"/><Run Text="?"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="1044,0,0,237" TextWrapping="Wrap" Width="50" FontFamily="Dubai Medium" FontSize="36" Foreground="#FF7E544C" Height="55" VerticalAlignment="Bottom"><Run Language="ru-ru" Text="Да"/></TextBlock>
+        <Button x:Name="AnnulBtn" Content="Аннулировать" HorizontalAlignment="Left" Margin="608,0,0,65" Width="444" FontFamily="Century Gothic" FontSize="36" FontWeight="Bold" BorderThickness="2,2,2,2" Foreground="#FF684A43" Background="#FFD9D9D9" Height="66" VerticalAlignment="Bottom" Click="AnnulBtn_Click">
+            <Button.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </Button.BorderBrush>
+        </Button>
+        <Image Margin="575,705,1047,63" Source="/icons8-перо-с-чернилами-80.png" Stretch="Fill"/>
+        <TextBox x:Name="Comment" Height="52" Margin="0,608,104,0" TextWrapping="NoWrap" VerticalAlignment="Top" Background="#FFD9D9D9" FontFamily="Century Gothic" FontSize="36" BorderThickness="2,2,2,2" HorizontalAlignment="Right" Width="461" Visibility="Hidden" TextChanged="Comment_TextChanged">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </TextBox.BorderBrush>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="#FF684A44" Opacity="1"/>
+            </TextBox.Foreground>
+        </TextBox>
+        <Label x:Name="labeltext" Content="Комментарий..." IsHitTestVisible="False" HorizontalAlignment="Right" Height="48" Margin="0,0,230,192" VerticalAlignment="Bottom" Width="315" FontSize="32" FontFamily="Century Gothic" Visibility="Hidden">
+            <Label.Foreground>
+                <SolidColorBrush Color="#FF684A44" Opacity="0.5"/>
+            </Label.Foreground>
+        </Label>
+        <CheckBox x:Name="YesBox" HorizontalAlignment="Left" Margin="1039,0,0,186" VerticalAlignment="Bottom" Background="#FFD9D9D9" BorderThickness="0.5,0.5,0.5,0.5" Foreground="#FF7E544C" Checked="YesBox_Checked" Unchecked="YesBox_Unchecked">
+            <CheckBox.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.7"/>
+            </CheckBox.BorderBrush>
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="4" ScaleY="4" />
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <Image Margin="0,0,648,754" Source="/4nepbxqozzea8wf54nhpdygoz5emfwfo4n67bqgosw.png" Stretch="Fill" Height="56" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="396"/>
+        <TextBlock Margin="742,556,0,0" TextWrapping="Wrap" FontFamily="Dubai Medium" FontSize="36" Foreground="#FF7E544C" RenderTransformOrigin="0.538,0.433" Height="55" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"><Run Text="Дата "/><LineBreak/><Run/><LineBreak/><Run Text="9КОЛ-ВО_"/></TextBlock>
+        <TextBox x:Name="Search" Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="64" Margin="117,49,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="471" Background="#FFD9D9D9" FontFamily="Century Gothic" FontSize="55" BorderThickness="2,2,2,2" TextChanged="Search_TextChanged" TextAlignment="Justify">
+            <TextBox.BorderBrush>
+                <SolidColorBrush Color="#FF684A43" Opacity="0.5"/>
+            </TextBox.BorderBrush>
+            <TextBox.Foreground>
+                <SolidColorBrush Color="#FF684A44" Opacity="1"/>
+            </TextBox.Foreground>
+        </TextBox>
+        <Label x:Name="SearchLabel" Content="Поиск..." IsHitTestVisible="False" HorizontalAlignment="Left" Height="48" Margin="138,57,0,0" VerticalAlignment="Top" Width="152" FontSize="32" FontFamily="Century Gothic">
+            <Label.Foreground>
+                <SolidColorBrush Color="#FF684A44" Opacity="0.5"/>
+            </Label.Foreground>
+        </Label>
+        <DatePicker x:Name="DateA" HorizontalAlignment="Left" Margin="742,609,0,0" VerticalAlignment="Top" SelectedDate="{Binding YourDateProperty}" Background="#FFDAD2C0" FontFamily="Century Gothic" Text="" Cursor="Pen">
+            <DatePicker.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,0" StartPoint="0.5,1" Opacity="0.5">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF684A43" Offset="0"/>
+                </LinearGradientBrush>
+            </DatePicker.BorderBrush>
+            <DatePicker.LayoutTransform>
+                <ScaleTransform ScaleX="2" ScaleY="2" />
+            </DatePicker.LayoutTransform>
+        </DatePicker>
+    </Grid>
+</Window>
